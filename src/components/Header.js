@@ -27,7 +27,9 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const navItems = [
+    { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Why Palm', path: '/why-palm' },
     { name: 'News', path: '/news' },
   ];
 

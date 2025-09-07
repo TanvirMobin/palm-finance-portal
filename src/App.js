@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/news" element={<News />} />
+            <Route path="/why-palm" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Why Palm Coming Soon</h1></div>} />
             <Route path="/docs" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Documentation Coming Soon</h1></div>} />
             <Route path="/transparency" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Transparency Coming Soon</h1></div>} />
             <Route path="/app" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Launch App Coming Soon</h1></div>} />

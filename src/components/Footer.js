@@ -1,23 +1,25 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, MessageCircle, MessageSquare, Mail } from 'lucide-react';
 
 const Footer = () => {
   // const currentYear = new Date().getFullYear();
 
-  // const companyLinks = [
-  //   { name: 'About', path: '/about' },
+  const companyLinks = [
+    { name: 'About', path: '/about' },
+    { name: 'News', path: '/news' },
+  ];
 
-  // const resourceLinks = [
-  //   { name: 'Docs', path: '/docs' },
-  //   { name: 'Transparency', path: '/transparency' },
-  //   { name: 'Whitepaper', path: '/whitepaper-v2.pdf' },
-  // ];
+  const resourceLinks = [
+    { name: 'Docs', path: '/docs' },
+    { name: 'Transparency', path: '/transparency' },
+    { name: 'Whitepaper', path: '/whitepaper-v2.pdf' },
+  ];
 
-  // const termLinks = [
-  //   { name: 'Privacy Policy', path: '/privacy-policy' },
-  //   { name: 'Terms of Use', path: '/terms-of-use' },
-  // ];
+  const termLinks = [
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms of Use', path: '/terms-of-use' },
+  ];
 
   const socialLinks = [
     { name: 'X (Twitter)', url: 'https://x.com/palmfinance', icon: Twitter },
@@ -28,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="px-4 md:px-8 lg:px-12 space-y-8 py-8 md:py-12 lg:py-16" style={{backgroundColor: '#F1E9DB'}}>
+    <div className="px-4 md:px-8 lg:px-12 space-y-8 py-8 md:py-12 lg:py-16 footer-container-mobile-padding" style={{backgroundColor: '#F1E9DB'}}>
       {/* Join Palm Community Section */}
       <section style={{backgroundColor: '#F7F1E8'}} className="py-8 md:py-12 lg:py-16 rounded-2xl max-w-screen-lg mx-auto mb-8">
         <div className="text-center px-4 md:px-6 lg:px-8">
@@ -57,7 +59,7 @@ const Footer = () => {
       </section>
 
       {/* Palm Navigation Section */}
-      {/* <footer style={{backgroundColor: '#F7F1E8'}} className="py-8 md:py-12 lg:py-16 rounded-2xl max-w-screen-lg mx-auto mb-8">
+      <footer style={{backgroundColor: '#F7F1E8'}} className="py-8 md:py-12 lg:py-16 rounded-2xl max-w-screen-lg mx-auto mb-8">
         <div className="px-10 md:px-12 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 lg:gap-12">
             <div className="flex-shrink-0 text-center lg:text-left lg:w-1/4">
@@ -66,23 +68,10 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 lg:w-3/4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 lg:w-3/4 footer-nav">
               <div className="text-center md:text-left">
-                <h3 className="text-gray-500 text-sm font-semibold mb-3 md:mb-4">Company</h3>
-                <div className="md:hidden space-y-2">
-                  {companyLinks.map((link) => (
-                    <div key={link.name}>
-                      <Link
-                        to={link.path}
-                        className="text-gray-700 hover:text-black text-sm transition-colors duration-200 block"
-                        style={{textDecoration: 'none'}}
-                      >
-                        {link.name}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <ul className="hidden md:block space-y-3">
+                <h3 className="text-gray-500 text-base font-semibold mb-3 md:mb-4">Company</h3>
+                <ul className="space-y-3 list-none">
                   {companyLinks.map((link) => (
                     <li key={link.name}>
                       <Link
@@ -98,21 +87,8 @@ const Footer = () => {
               </div>
 
               <div className="text-center md:text-left">
-                <h3 className="text-gray-500 text-sm font-semibold mb-3 md:mb-4">Resources</h3>
-                <div className="md:hidden space-y-2">
-                  {resourceLinks.map((link) => (
-                    <div key={link.name}>
-                      <Link
-                        to={link.path}
-                        className="text-gray-700 hover:text-black text-sm transition-colors duration-200 block"
-                        style={{textDecoration: 'none'}}
-                      >
-                        {link.name}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <ul className="hidden md:block space-y-3">
+                <h3 className="text-gray-500 text-base font-semibold mb-3 md:mb-4">Resources</h3>
+                <ul className="space-y-3 list-none">
                   {resourceLinks.map((link) => (
                     <li key={link.name}>
                       <Link
@@ -128,21 +104,8 @@ const Footer = () => {
               </div>
 
               <div className="text-center md:text-left">
-                <h3 className="text-gray-500 text-sm font-semibold mb-3 md:mb-4">Terms</h3>
-                <div className="md:hidden space-y-2">
-                  {termLinks.map((link) => (
-                    <div key={link.name}>
-                      <Link
-                        to={link.path}
-                        className="text-gray-700 hover:text-black text-sm transition-colors duration-200 block"
-                        style={{textDecoration: 'none'}}
-                      >
-                        {link.name}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <ul className="hidden md:block space-y-3">
+                <h3 className="text-gray-500 text-base font-semibold mb-3 md:mb-4">Terms</h3>
+                <ul className="space-y-3 list-none">
                   {termLinks.map((link) => (
                     <li key={link.name}>
                       <Link
@@ -158,8 +121,15 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          
+          {/* Copyright Section */}
+          <div className="mt-12 pt-12 border-t border-gray-300 text-center copyright-section-padding">
+            <p className="text-gray-500 text-sm mt-4">
+              © {new Date().getFullYear()} Palm. All rights reserved.
+            </p>
+          </div>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 };

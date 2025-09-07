@@ -38,7 +38,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="mt-18 lg:mt-36 px-4 sm:px-6 md:px-10 lg:px-12 relative z-10">
+      <section className="mt-18 lg:mt-36 px-4 sm:px-6 md:px-10 lg:px-12 relative z-10 stats-section-mobile-padding">
         <div className="max-w-screen-lg mx-auto z-10">
           <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-4 lg:gap-8 items-stretch">
             <div className="metric-card">
@@ -179,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-24 px-10 lg:px-12 bg-gray-50">
+      <section className="py-24 px-10 lg:px-12 bg-gray-50 use-cases-section-mobile-padding">
         <div className="max-w-screen-lg mx-auto">
           {/* Responsive Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">

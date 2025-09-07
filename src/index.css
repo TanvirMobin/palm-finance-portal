@@ -355,14 +355,51 @@ code {
 }
 
 /* Social Media Labels - Hide on mobile */
-.social-label {
-  display: inline;
-}
-
+/* Custom media query for hiding social media labels on mobile */
 @media (max-width: 630px) {
   .social-label {
-    display: none;
+    display: none !important;
   }
+}
+
+/* Remove bullet points from footer navigation on mobile */
+@media (max-width: 767px) {
+  .footer-nav ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+  }
+}
+
+/* Footer padding for screens below 1024px */
+@media (max-width: 1023px) {
+  /* Footer mobile padding */
+  .footer-mobile-padding {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+  
+  /* Main footer container mobile padding */
+  .footer-container-mobile-padding {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+  
+  /* Stats section mobile padding */
+  .stats-section-mobile-padding {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+  
+  /* Use cases section mobile padding */
+  .use-cases-section-mobile-padding {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}
+
+/* Copyright section padding - applies to all screens */
+.copyright-section-padding {
+  padding-top: 3rem !important;
 }
 
 .feature-card:hover {
