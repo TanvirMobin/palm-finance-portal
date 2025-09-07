@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{backgroundColor: 'rgb(241, 233, 219)'}}>
       {/* Hero Section */}
       <section className="pt-20 lg:pt-60 px-10 lg:px-60 text-center min-h-[80vh] flex items-center relative overflow-hidden">
         {/* Background Shapes */}
@@ -24,9 +24,11 @@ const Home = () => {
           <div className="get-started-container">
             <Link
               to="/app"
-              className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors hover:bg-orange-500 bg-black px-8 py-6"
+              className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors bg-black px-8 py-6"
               target="_blank"
               style={{textDecoration: 'none'}}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165D31'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000000'}
             >
               <span className="font-mono text-[15px] uppercase leading-none group-hover:text-white text-white">Get Started</span>
               <div className="css-arrow"></div>
@@ -58,27 +60,47 @@ const Home = () => {
       {/* Minting & Staking Section */}
       <section className="py-24 px-10 lg:px-12">
         <div className="max-w-screen-lg mx-auto">
-          <div className="minting-staking-container rounded-2xl text-white relative overflow-hidden">
+          <div className="minting-staking-container rounded-2xl text-white relative overflow-hidden" style={{
+            backgroundImage: "url('/mint-stake.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundBlendMode: 'overlay'
+          }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative z-10">
               <div>
-                <div className="inline-flex bg-white rounded-full mb-8 relative palm-logo-container">
-                  <span className="text-black font-bold palm-text">Palm</span>
+                <div className="inline-flex mb-8 relative palm-logo-container" style={{
+                  backgroundColor: '#165D31',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <img 
+                    src="/palm_logo.png" 
+                    alt="Palm Logo" 
+                    style={{ 
+                      height: '28px',
+                      width: 'auto',
+                      display: 'block' 
+                    }} 
+                  />
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-orange-500 rounded-full"></div>
                 </div>
                 <h2 className="text-5xl font-bold mb-8 leading-tight">
-                  Minting & Staking
+                  Palm Minting & Staking
                 </h2>
                 <p className="text-white/95 text-lg leading-relaxed mb-6">
-                  Mint USDf, an overcollateralized synthetic dollar, by depositing eligible liquid assets.
+                  <strong>Mint PUSD, a fully-collateralized, Shariah-compliant stablecoin designed for freedom and trust.</strong>
                 </p>
                 <p className="text-white/95 text-lg leading-relaxed mb-6">
-                  Stake USDf to create sUSDf, a yield-bearing token that provides users with diversified, 
-                  institutional-grade trading strategies beyond blue chip basis spread arbitrage.
+                  Deposit approved liquid assets to create PUSD — a jurisdiction-neutral, non-freezable digital dollar backed 1:1 by real assets.
                 </p>
-                <p className="text-white/95 text-lg leading-relaxed mb-12">
-                  Experience transparent, secure financial solutions designed for resilient yield 
-                  performance in any market condition.
+                <p className="text-white/95 text-lg leading-relaxed mb-6">
+                  <strong>Palm is built for individual sovereignty, global accessibility, and financial integrity.</strong> No central party can freeze, seize, or censor your funds.
                 </p>
+                
                 <div className="mt-6">
                   <Link
                     to="/learn-more"
@@ -94,31 +116,35 @@ const Home = () => {
                 <div className="feature-card">
                   <span className="feature-number">01</span>
                   <div>
-                    <h3 className="feature-title">Access the Ecosystem</h3>
+                    <h3 className="feature-title">Access the Palm Ecosystem</h3>
                     <p className="feature-description">
-                      Deposit your digital assets, including stablecoins, bluechip, and altcoins, to mint 
-                      USDf. Unlock your earning potential with Falcon Finance.
+                      Easily mint and redeem PUSD through Palm's multi-jurisdictional treasury and cross-chain bridge network.
+                      Enjoy a compliant, transparent, and censorship-resistant stablecoin wherever you are.
                     </p>
                   </div>
                 </div>
                 <div className="feature-card">
                   <span className="feature-number">02</span>
                   <div>
-                    <h3 className="feature-title">Stake USDf for Yield</h3>
+                    <h3 className="feature-title">Secure, Non-Freezable Holdings</h3>
                     <p className="feature-description">
-                      Stake USDf to mint sUSDf and earn a base yield. Enjoy competitive yields and the 
-                      flexibility to withdraw your assets any time.
+                      Unlike traditional stablecoins, Palm guarantees <strong>no centralized freeze controls</strong>.
+                      Your assets remain <strong>fully under your control</strong>, empowering users and communities worldwide.
                     </p>
                   </div>
                 </div>
                 <div className="feature-card">
                   <span className="feature-number">03</span>
                   <div>
-                    <h3 className="feature-title">Restake</h3>
-                    <p className="feature-description">
-                      Amplify your returns by locking sUSDf for a fixed-term staking. Leverage the power of time 
-                      to maximise your yields.
-                    </p>
+                    <h3 className="feature-title">Built for Freedom</h3>
+                    <div className="feature-description">
+                      <p className="mb-3">Palm represents a next-generation standard for financial independence:</p>
+                      <ul className="ml-4 space-y-1">
+                        <li>Backed by <strong>real, verifiable reserves</strong></li>
+                        <li>Operates outside unilateral jurisdictional control</li>
+                        <li>Compliant with Shariah principles for ethical, interest-free stability</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -139,9 +165,11 @@ const Home = () => {
           <div className="flex justify-center">
             <Link
               to="/app"
-              className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors hover:bg-orange-500 bg-black px-8 py-6"
+              className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors bg-black px-8 py-6"
               target="_blank"
               style={{textDecoration: 'none'}}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165D31'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000000'}
             >
               <span className="font-mono text-[15px] uppercase leading-none group-hover:text-white text-white">Start Now</span>
               <div className="css-arrow"></div>
@@ -267,16 +295,17 @@ const Home = () => {
       </section>
 
       {/* Bottom Gradient CTA Section */}
-      <section 
-        className="w-full text-white text-left relative overflow-hidden bg-cover bg-bottom bg-no-repeat flex items-center rounded-2xl"
-        style={{
-          backgroundImage: "url('/minting-staking-bg.png')",
-          height: '472px',
-          maxWidth: '1024px',
-          margin: '0 auto',
-          backgroundPosition: '50% 80%'
-        }}
-      >
+      <section className="py-24 px-10 lg:px-12">
+        <div 
+          className="w-full text-white text-left relative overflow-hidden bg-cover bg-bottom bg-no-repeat flex items-center rounded-2xl"
+          style={{
+            backgroundImage: "url('/mint-stake.png')",
+            height: '472px',
+            maxWidth: '1024px',
+            margin: '0 auto',
+            backgroundPosition: '50% 80%'
+          }}
+        >
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-40 rounded-2xl"></div>
         
@@ -293,6 +322,7 @@ const Home = () => {
             <div className="learn-more-arrow"></div>
           </Link>
         </div>
+        </div>
       </section>
 
       {/* Final CTA Section */}
@@ -303,9 +333,11 @@ const Home = () => {
           </h2>
           <Link
             to="/app"
-            className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors hover:bg-orange-500 bg-black px-8 py-6"
+            className="group inline-flex w-fit items-center gap-6 rounded-full transition-colors bg-black px-8 py-6"
             target="_blank"
             style={{textDecoration: 'none'}}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165D31'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000000'}
           >
             <span className="text-white font-mono text-[15px] uppercase leading-none">GET STARTED</span>
             <div className="css-arrow"></div>

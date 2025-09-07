@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen text-gray-900" style={{backgroundColor: 'rgb(241, 241, 241)'}}>
+      <div className="min-h-screen text-gray-900" style={{backgroundColor: 'rgb(241, 233, 219)'}}>
         <Header />
         <main>
           <Routes>

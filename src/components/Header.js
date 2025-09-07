@@ -28,8 +28,6 @@ const Header = () => {
 
   const navItems = [
     { name: 'About', path: '/about' },
-    { name: 'Docs', path: '/docs' },
-    { name: 'Transparency', path: '/transparency' },
     { name: 'News', path: '/news' },
   ];
 
@@ -37,16 +35,34 @@ const Header = () => {
 
   return (
     <>
-      <header style={{backgroundColor: 'rgb(241, 241, 241)'}} className="py-16">
+      <header style={{backgroundColor: '#F1E9DB'}} className="py-16">
         <div className="max-w-screen-lg mx-auto px-10 lg:px-12">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="text-black text-3xl font-normal italic" style={{textDecoration: 'none'}}>
-              Palm
+            <Link to="/" className="flex items-center" style={{textDecoration: 'none'}}>
+              <div style={{
+                backgroundColor: '#165D31',
+                borderRadius: '8px',
+                padding: '6px 12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <img 
+                  src="/palm_logo.png" 
+                  alt="Palm Logo" 
+                  style={{ 
+                    height: '28px',
+                    width: 'auto',
+                    display: 'block' 
+                  }} 
+                />
+              </div>
             </Link>
 
             {/* Navigation Container with rounded white background */}
-            <div className="hidden lg:flex items-center bg-white px-8 py-3 shadow-sm" style={{borderRadius: '15px'}}>
+            <div className="hidden lg:flex items-center px-8 py-3 shadow-sm" style={{borderRadius: '15px', backgroundColor: '#F7F1E8'}}>
               <nav className="flex items-center">
                 {navItems.map((item) => (
                   <Link
@@ -67,7 +83,9 @@ const Header = () => {
               {/* Launch App Button */}
               <Link
                 to="/app"
-                className="bg-black text-white px-8 py-3 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors duration-200 flex items-center gap-3 ml-8"
+                className="bg-black text-white px-8 py-3 rounded-full text-sm font-medium uppercase tracking-wider transition-colors duration-200 flex items-center gap-3 ml-8"
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165D31'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000000'}
                 style={{textDecoration: 'none', whiteSpace: 'nowrap', minWidth: 'max-content',}}
               >
                 LAUNCH&nbsp;APP
@@ -98,12 +116,30 @@ const Header = () => {
           ></div>
           
           {/* Overlay menu */}
-          <div className="lg:hidden fixed animate-slide-down" style={{top: 0, left: 0, right: 0, width: '100vw', height: '100vh', zIndex: 9999, backgroundColor: 'rgb(241, 241, 241)', position: 'absolute'}}>
+          <div className="lg:hidden fixed animate-slide-down" style={{top: 0, left: 0, right: 0, width: '100vw', height: '100vh', zIndex: 9999, backgroundColor: '#F1E9DB', position: 'absolute'}}>
             <div className="flex flex-col" style={{height: '100vh'}}>
               {/* Header with close button */}
               <div className="flex justify-between items-center" style={{padding: '2.4rem 2.4rem 2.4rem 2.4rem'}}>
-                <Link to="/" className="text-black text-3xl font-normal italic" style={{textDecoration: 'none'}}>
-                  Palm
+                <Link to="/" className="flex items-center" style={{textDecoration: 'none'}}>
+                  <div style={{
+                    backgroundColor: '#165D31',
+                    borderRadius: '8px',
+                    padding: '6px 12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <img 
+                      src="/palm_logo.png" 
+                      alt="Palm Logo" 
+                      style={{ 
+                        height: '28px',
+                        width: 'auto',
+                        display: 'block' 
+                      }} 
+                    />
+                  </div>
                 </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -138,7 +174,9 @@ const Header = () => {
                 <Link
                   to="/app"
                   onClick={() => setIsMenuOpen(false)}
-                  className="bg-black text-white px-8 py-4 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors duration-200 w-full flex items-center justify-center gap-2"
+                  className="bg-black text-white px-8 py-4 rounded-full text-sm font-medium uppercase tracking-wider transition-colors duration-200 w-full flex items-center justify-center gap-2"
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165D31'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000000'}
                   style={{textDecoration: 'none'}}
                 >
                   LAUNCH APP

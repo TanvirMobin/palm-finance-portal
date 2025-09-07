@@ -30,7 +30,7 @@ const News = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-dark-900">
+    <div className="min-h-screen py-20" style={{backgroundColor: 'rgb(241, 233, 219)'}}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="initial"
@@ -38,8 +38,8 @@ const News = () => {
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold text-white mb-6">Latest News</h1>
-          <p className="text-xl text-dark-300">
+          <h1 className="text-5xl font-bold text-black mb-6">Latest News</h1>
+          <p className="text-xl text-gray-600">
             Stay updated with the latest developments from Palm Finance
           </p>
         </motion.div>
@@ -53,14 +53,14 @@ const News = () => {
           {newsItems.map((item, index) => (
             <div
               key={index}
-              className="bg-dark-800 rounded-2xl p-6 hover:bg-dark-700 transition-colors duration-200"
+              className="bg-white rounded-2xl p-6 hover:bg-gray-50 transition-colors duration-200 border border-gray-200 shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-palm-400 text-sm font-medium">{item.category}</span>
-                <span className="text-dark-400 text-sm">{item.date}</span>
+                <span className="text-orange-600 text-sm font-medium">{item.category}</span>
+                <span className="text-gray-500 text-sm">{item.date}</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
-              <p className="text-dark-300 leading-relaxed">{item.excerpt}</p>
+              <h3 className="text-xl font-semibold text-black mb-3">{item.title}</h3>
+              <p className="text-gray-700 leading-relaxed">{item.excerpt}</p>
             </div>
           ))}
         </motion.div>
